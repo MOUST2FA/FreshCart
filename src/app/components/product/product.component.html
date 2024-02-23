@@ -1,0 +1,39 @@
+<section class="pt-3">
+  <div>
+    <input [(ngModel)]="term" type="text" placeholder="Search..." class="form-control w-50 m-auto my-4">
+  </div>
+  <div class="container-fluid">
+    <div class="row justify-content-center g-4">
+      <div *ngFor="let item of productItem |search:term | paginate: { id: 'productPagination',
+      itemsPerPage: pageSize,
+      currentPage: p,
+      totalItems: total }" class="col-md-2">
+        <div class="product p-2">
+          <i *ngIf="!wishlistId.includes(item._id)" role="button" (click)="addWishlist(item._id)"
+            class="fa-regular fa-heart fs-1 heart"></i>
+          <i *ngIf="wishlistId.includes(item._id)" role="button" (click)="removeWishlist(item._id)"
+            class="fa-solid fa-heart fs-1 heart text-danger"></i>
+          <div role="button" [routerLink]="['/details' ,item._id]">
+            <div>
+              <img class="w-100 mb-3" [src]="item.imageCover" alt="">
+            </div>
+            <h5 class="text-main">{{item.category.name}}</h5>
+            <h6>{{item.title.split(' ',2).join(' ')}}</h6>
+            <div class="d-flex justify-content-between">
+              <span>{{item.price}} EGP</span>
+              <span><i class="fas fa-star rating-color"></i> {{item.ratingsAverage}}</span>
+            </div>
+          </div>
+          <button (click)="addProduct(item._id)" class="add-btn btn bg-main text-white w-100 mt-3 ">Add To Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center mt-5">
+    <pagination-controls id="productPagination" (pageChange)="pageChanged($event)"
+      (pageBoundsCorrection)="pageChanged($event)" [maxSize]="9" [directionLinks]="true" [autoHide]="true"
+      [responsive]="true" previousLabel="Previous" nextLabel="Next" screenReaderPaginationLabel="Pagination"
+      screenReaderPageLabel="page" screenReaderCurrentLabel="You're on page">
+    </pagination-controls>
+  </div>
+</section>

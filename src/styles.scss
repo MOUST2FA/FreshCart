@@ -1,0 +1,161 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: lightgray;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: green;
+}
+
+
+
+$main-color: #0aad0a;
+$light-color: #f0f3f2;
+
+// $shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+//   rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+//   rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+
+
+$shadow: rgb(35, 234, 13) 0px 2px 4px -1px,
+rgb(35, 234, 13) 0px 4px 5px 0px,
+rgb(35, 234, 13) 0px 1px 10px 0px;
+
+$font-family: "Encode Sans Expanded",
+sans-serif;
+$rating-color: #ffc908;
+$main-transition: 0.8s;
+
+.rating-color {
+  color: $rating-color;
+}
+
+.active-Link {
+  background-color: $main-color !important;
+  color: #fff !important;
+  border-radius: 7px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.font-sm {
+  font-size: 14px;
+}
+
+.text-main {
+  color: $main-color;
+}
+
+.text-main-light {
+  color: $light-color;
+}
+
+.bg-main {
+  background-color: $main-color !important;
+}
+
+.bg-main-light {
+  background-color: $light-color !important;
+}
+
+.main-btn {
+  border: unset;
+  cursor: pointer;
+  color: #fff !important;
+  background-color: $main-color !important;
+  padding: 4px 8px;
+  transition: background-color $main-transition;
+  border-radius: 5px;
+}
+
+.main-btn:hover {
+  background-color: #08e208;
+}
+
+.main-btn:disabled {
+  background-color: #067a0663 !important;
+  color: #ffffff8e !important;
+  cursor: not-allowed;
+}
+
+
+.product div{
+  overflow: hidden;
+}
+
+.product img {
+  transition: transform 1s;
+}
+
+.product:hover img {
+  transform: scale(1.1);
+}
+
+
+.brand {
+  &:hover {
+    box-shadow: $shadow;
+    transform: scale(1.1);
+    cursor: pointer;
+    color: #08e208;
+  }
+
+  transition:transform 1s,
+  box-shadow 1s,
+  color 0.7s;
+}
+
+.product {
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: $shadow;
+    border: solid 1px var(--main-color);
+    transition: box-shadow 1s;
+
+    .add-btn {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+  .add-btn {
+    transition: transform 1s, opacity 1s;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  &:hover {
+    .heart {
+      right: 8px;
+    }
+  }
+
+  .heart {
+    position: absolute;
+    top: 8px;
+    right: -70px;
+    transition: right 0.7s;
+    z-index: 990;
+  }
+}
+
+section {
+  margin-top: 70px !important;
+}
+
+
+.toast-container {
+  margin-top: 60px;
+}
