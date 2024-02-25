@@ -9,6 +9,17 @@ nav {
 
 
 
+
+// .badge1::before{
+//   content: "";
+//   position: absolute;
+//   top: 2px;
+//   right: 20px;
+//   width: 15px;
+//   height: 10px;
+
+// }
+
 .hov1 {
   &:hover {
     color: red !important;
@@ -51,4 +62,16 @@ nav {
   border: 2px solid rgb(3, 175, 3);
   border-radius: 50%;
   padding: 8px 12px;
+  position: relative;
+}
+
+.span1::after{
+  content: "";
+  position: absolute;
+  top: 37px;
+  left: 11px;
+  background-color: #0aad0a;
+  width: 16px;
+  height: 12px;
+  clip-path: polygon(100% 0%, 50% 50%, 0% 0%);
 }
