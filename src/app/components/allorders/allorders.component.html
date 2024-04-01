@@ -1,0 +1,19 @@
+<section class="pt-2">
+  <div class="container">
+    <div *ngFor="let item of older" class="row my-2">
+      <div  class="col-md-12">
+        <div class="bg-main-light shadow p-3 d-flex justify-content-between">
+          <div>
+            <h5 class="my-3">Name : <span class="text-main">{{item.user.name}}</span></h5>
+            <h5 class="my-3">City : <span class="text-main">{{item.shippingAddress.city}}</span></h5>
+            <h5>Phone : <span class="text-main ">{{item.shippingAddress.phone}}</span></h5>
+          </div>
+          <div>
+            <h5 class="my-3">Total Praise : <span class="text-main">{{item.totalOrderPrice}} EGP</span></h5>
+            <h5>payment Method : <span class="text-main ">{{item.paymentMethodType}}</span></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
