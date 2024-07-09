@@ -1,0 +1,20 @@
+<section class="pt-3">
+  <div class="container-fluid">
+    <div class="row justify-content-center g-4">
+      <div *ngFor="let item of brandProductId" class="col-md-2">
+        <div class="product p-2">
+          <div [routerLink]="['/details' ,item._id]">
+            <img class="w-100 mb-3" [src]="item.imageCover" alt="">
+            <h5 class="text-main">{{item.category.name}}</h5>
+            <h6>{{item.title.split(' ',2).join(' ')}}</h6>
+            <div class="d-flex justify-content-between">
+              <span>{{item.price}} EGP</span>
+              <span><i class="fas fa-star rating-color"></i> {{item.ratingsAverage}}</span>
+            </div>
+          </div>
+          <button (click)="addCart(item._id)" class="add-btn btn bg-main text-white w-100 mt-3 ">Add To Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+<section class="w-75 m-auto shadow p-3 bg-main-light">
+  <form [formGroup]="olderForm" (ngSubmit)="handelForm()">
+    <div class="my-3">
+      <input type="text" formControlName="details" placeholder="Details" class="form-control">
+    </div>
+    <div class="my-3">
+      <input type="tel" formControlName="phone" placeholder="Phone" class="form-control">
+    </div>
+    <div class="my-3">
+      <input type="text" formControlName="city" placeholder="City" class="form-control">
+    </div>
+    <button class="btn bg-main text-white w-100">Check Out</button>
+  </form>
+</section>

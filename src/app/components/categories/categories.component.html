@@ -1,0 +1,12 @@
+<section class="pt-3">
+  <div class="container-fluid">
+    <div class="row g-3 justify-content-center">
+      <div *ngFor="let item of categoriesItem" class="col-md-3">
+        <div role="button" [routerLink]="['/categories-product' , item._id]" class="border border-success border-2 rounded p-2 shadow">
+          <img class="w-100" height="300" [src]="item.image" alt="">
+          <h5 class="text-center my-2 text-main">{{item.name}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
